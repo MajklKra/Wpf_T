@@ -1,0 +1,115 @@
+﻿<Window x:Class="Wpf_T.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_T"
+        mc:Ignorable="d"
+        Title="Vozidla" Height="450" Width="800">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="175"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ToolBar Grid.Row="0" >
+            <Button x:Name="btnNeco" Content="Otevrit soubor" Click="btnNeco_Click" />
+        </ToolBar >
+
+        <Label x:Name="lb1" Content="Soupis vozu"  Grid.Row="1" FontSize="20" FontWeight="Bold" VerticalContentAlignment="Center"/>
+
+        <DataGrid FontSize="14" Grid.Row="2" AlternatingRowBackground="LightGray" Name="AutaDataGrid" ItemsSource="{Binding Vozidlo}" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="AutaDataGrid_SelectionChanged" GridLinesVisibility="None">
+            <DataGrid.CellStyle>
+                <Style/>
+            </DataGrid.CellStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Width ="*" Header="Znacka" Binding="{Binding Nazev}" FontSize="16" >
+                    <DataGridColumn.HeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                    </DataGridColumn.HeaderStyle>
+                </DataGridTextColumn>
+                    
+                <DataGridTextColumn  Width ="*" Header="Datum" Binding="{Binding Datum}" >
+                <DataGridColumn.HeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </DataGridColumn.HeaderStyle>
+                </DataGridTextColumn>
+            
+                <DataGridTextColumn  Width ="*" Header="Cena" Binding="{Binding Cena}" >
+                    <DataGridColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </DataGridColumn.HeaderStyle>
+                </DataGridTextColumn>
+            
+                <DataGridTextColumn  Width ="*" Header="Dph" Binding="{Binding Dph}" >
+                    <DataGridColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </DataGridColumn.HeaderStyle>
+                </DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Label x:Name="lb2" Content="Prodeje o vikendech"  Grid.Row="3" FontSize="20" FontWeight="Bold"/>
+
+        <DataGrid FontSize="14" Grid.Row="4" AlternatingRowBackground="LightGray" Name="AutaDataGrid2" ItemsSource="{Binding Vysledek}" CanUserSortColumns="False" CanUserResizeRows="False" CanUserResizeColumns="False" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Single" IsReadOnly="True" AutoGenerateColumns="False" GridLinesVisibility="None">
+            <DataGrid.Columns>
+                <DataGridTextColumn  Width ="*"  Header="Nazev modelu" Binding="{Binding S}" >
+
+                <DataGridColumn.HeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </DataGridColumn.HeaderStyle>
+
+                </DataGridTextColumn>
+
+                <!--<DataGridTextColumn  Width ="*" Header="Datum" Binding="{Binding Datum}" >
+
+                <DataGridColumn.HeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </DataGridColumn.HeaderStyle>
+
+                </DataGridTextColumn>-->
+
+                <!--<DataGridTextColumn  Width ="*" Header="Cena bez DPH" Binding="{Binding Cena}" >
+               
+                    <DataGridColumn.HeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="FontWeight" Value="Bold" />
+                    </Style>
+                </DataGridColumn.HeaderStyle>
+
+                </DataGridTextColumn>-->
+
+                <DataGridTextColumn  Width ="*" Header="Cena s DPH" Binding="{Binding Dph}" >
+
+                    <DataGridColumn.HeaderStyle>
+                        <Style TargetType="DataGridColumnHeader">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Style>
+                    </DataGridColumn.HeaderStyle>
+
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+
+</Window>

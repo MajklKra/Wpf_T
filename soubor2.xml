@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vozidla>
+  <vozidlo>
+    <nazev>Skoda Oktavia</nazev>
+    <datum>02.12.2010 0:00:00</datum>
+    <cena>500000</cena>
+    <dph>20</dph>
+  </vozidlo>
+  <vozidlo>
+    <nazev>Skoda Felicia</nazev>
+    <datum>03.12.2000 0:00:00</datum>
+    <cena>210000</cena>
+    <dph>20</dph>
+  </vozidlo>
+</vozidla>
